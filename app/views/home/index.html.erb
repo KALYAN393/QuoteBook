@@ -1,16 +1,4 @@
 <div class="quotebook">
-  <header>
-    <div class="logo">
-      <%= image_tag "logo.png", height: 50 %>
-    </div>
-    <nav>
-      <ul>
-        <li>Dashboard </li>
-        <li class="NewPost"><%= link_to "New Post", new_post_path, class: "link-secondarysmooth"  %></li>
-        <li><%= link_to "Profile", posts_path, class: "link-secondarysmooth" %></li>
-        <li class="logout"><%= link_to "Log out", destroy_user_session_path,data: {"turbo-method": :delete}, class: "link-secondarysmooth" %></li>
-      </ul>
-    </nav>
-  </header>
+  <%= render "header" %>
   <%= render "display" %>
 </div>

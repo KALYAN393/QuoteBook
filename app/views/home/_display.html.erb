@@ -12,7 +12,9 @@
             <p class="posts-content-text-p">&#8220  <%= p.text %>   &#8221</p>
           </div>
         </div>
-        <div class="posts-footer"></div>
+        <div class="posts-footer">
+          <p><%= time_ago_in_words(p.created_at) %></p>
+        </div>
       </div>
     <% end %>
   </div>

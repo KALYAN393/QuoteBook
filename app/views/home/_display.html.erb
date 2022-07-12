@@ -1,0 +1,52 @@
+<section>
+  <div class="left-side">
+    <%@posts.each do |p|%>
+      <div class="posts">
+        <div class="posts-title">
+          <div class="posts-title-name">
+            <p><%= p.User[:username] %></p>
+          </div>
+        </div>
+        <div class="posts-content">
+          <div class="posts-content-text">
+            <p class="posts-content-text-p">&#8220  <%= p.text %>   &#8221</p>
+          </div>
+        </div>
+        <div class="posts-footer"></div>
+      </div>
+    <% end %>
+  </div>
+  <div class="right-side">
+    <div class="stories">
+      <p>Flyoutes</p>
+      <div class="stories-contents">
+        <div class="image">
+          <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
+        </div>
+        <div class="details">
+          <p class="name">Kalyan</p>
+          <p>12 hours ago</p>
+        </div>
+      </div>
+      <div class="stories-contents">
+        <div class="image">
+          <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
+        </div>
+        <div class="details">
+          <p class="name">HHH</p>
+          <p>12 hours ago</p>
+        </div>
+      </div>
+      <div class="stories-contents">
+        <div class="image">
+          <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
+        </div>
+        <div class="details">
+          <p class="name">Undertaker</p>
+          <p>12 hours ago</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

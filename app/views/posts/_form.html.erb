@@ -1,0 +1,16 @@
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+  </div>
+  <div>
+    <%= f.label :post_type %>
+    <%= f.text_area :post_type %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :User_id, value: current_user.id %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

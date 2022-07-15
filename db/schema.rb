@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_11_120703) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_14_182201) do
+  create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "User_id", null: false
+    t.bigint "Post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Post_id"], name: "index_likes_on_Post_id"
+    t.index ["User_id"], name: "index_likes_on_User_id"
+  end
+
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "User_id", null: false
     t.string "text"
     t.integer "post_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total_likes_count"
     t.index ["User_id"], name: "index_posts_on_User_id"
   end
 
@@ -33,5 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_11_120703) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "likes", "Posts"
+  add_foreign_key "likes", "Users"
   add_foreign_key "posts", "Users"
 end

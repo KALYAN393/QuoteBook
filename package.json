@@ -1,0 +1,11 @@
+{
+  "name": "QuoteBook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/KALYAN393/QuoteBook.git",
+  "author": "Kalyan <test@plansource.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}

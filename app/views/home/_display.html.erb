@@ -12,43 +12,50 @@
             <p class="posts-content-text-p">&#8220  <%= p.text %>   &#8221</p>
           </div>
         </div>
-        <div class="posts-footer">
-          <p><%= time_ago_in_words(p.created_at) %></p>
+        <div >
+          <div class="posts-reactions">
+            <a href="javascript:" class="material-symbols-outlined like-<%= p.id%> post" data-id=<%= p.id%>>favorite</a>
+          </div>
+          <div>
+          <p> <strong id="post-<%= p.id%>-likes"><%= p.total_likes_count %> likes</strong></p>
         </div>
+        <div>
+          <p class="posts-footer-time"><%= time_ago_in_words p.created_at %> ago</></div>
       </div>
-    <% end %>
-  </div>
-  <div class="right-side">
-    <div class="stories">
-      <p>Flyoutes</p>
-      <div class="stories-contents">
-        <div class="image">
-          <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
-        </div>
-        <div class="details">
-          <p class="name">Kalyan</p>
-          <p>12 hours ago</p>
-        </div>
+    </div>
+  <% end %>
+</div>
+<div class="right-side">
+  <div class="stories">
+    <p>Flyoutes</p>
+    <div class="stories-contents">
+      <div class="image">
+        <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
       </div>
-      <div class="stories-contents">
-        <div class="image">
-          <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
-        </div>
-        <div class="details">
-          <p class="name">HHH</p>
-          <p>12 hours ago</p>
-        </div>
+      <div class="details">
+        <p class="name">Kalyan</p>
+        <p>12 hours ago</p>
       </div>
-      <div class="stories-contents">
-        <div class="image">
-          <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
-        </div>
-        <div class="details">
-          <p class="name">Undertaker</p>
-          <p>12 hours ago</p>
-        </div>
+    </div>
+    <div class="stories-contents">
+      <div class="image">
+        <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
+      </div>
+      <div class="details">
+        <p class="name">HHH</p>
+        <p>12 hours ago</p>
+      </div>
+    </div>
+    <div class="stories-contents">
+      <div class="image">
+        <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
+      </div>
+      <div class="details">
+        <p class="name">Undertaker</p>
+        <p>12 hours ago</p>
       </div>
     </div>
   </div>
+</div>
 </div>
 </section>

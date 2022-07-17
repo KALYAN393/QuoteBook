@@ -1,20 +1,2 @@
 <%= render "home/header" %>
-<p>displaying posts of the <%= current_user.username %></p>
-<p><% @userposts.each do |p|  %></p>
-  <div class="Uposts">
-    <div class="uposts-content">
-      <div class="uposts-content-text">
-        <p class="uposts-content-text-p">&#8220  <%= p.text %>   &#8221</p>
-      </div>
-      <div >
-        <div class="uposts-reactions">
-          <a href="javascript:" class="material-symbols-outlined">favorite</a>
-        </div>
-        <div>
-          <p> <strong ><%= p.total_likes_count %> </strong></p>
-        </div>
-        <div>
-          <p class="uposts-footer-time"><%= time_ago_in_words p.created_at %> ago</></div>
-      </div>
-      <%= button_to "DELETE", post_path(p), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>
-    <% end %>
+<%= render "profile" %>

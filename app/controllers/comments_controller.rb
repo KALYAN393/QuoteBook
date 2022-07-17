@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     if user_signed_in?
       @comment=Comment.new(post_params)
-  
+      
       if @comment.save
         redirect_to home_index_path, flash: { success: "comment was created successfully!"}
      else

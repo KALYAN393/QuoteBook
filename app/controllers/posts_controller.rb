@@ -14,10 +14,10 @@ class PostsController < ApplicationController
     if user_signed_in?
     @post=Post.new(post_params)
 
-    if @post.save!
+    if @post.save
       redirect_to home_index_path, flash: { success: "post was created successfully!"}
    else
-      redirect_to new_post_path, flash: { danger: "post was not saved!"}
+     render 'new'
    end
   end
 end

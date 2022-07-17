@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  validates :text, presence: true, length: { minimum: 10, maximum: 300 }
+
   belongs_to :User
 
   has_many :likes, dependent: :destroy

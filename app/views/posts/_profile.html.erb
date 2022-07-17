@@ -1,0 +1,57 @@
+<section style="padding: 34px 25%;">
+  <div class="left-side" style="width:90%;">
+    <%@userposts.each do |p|%>
+      <div class="posts">
+        <div class="posts-title">
+          <div class="posts-title-name">
+            <p><%= p.User[:username] %></p>
+          </div>
+        </div>
+        <div class="posts-content">
+          <div class="posts-content-text">
+            <p class="posts-content-text-p">&#8220  <%= p.text %>   &#8221</p>
+          </div>
+        </div>
+        <div class="post-middle">
+          <div class="posts-reactions">
+            <a  class="material-symbols-outlined profile-like">favorite</a>
+          </div>
+          <div>
+            <p> <strong><%= p.total_likes_count %> likes</strong></p>
+          </div>
+          <div class="posts-tags">
+            <% if p.tags.exists?  %>
+              <%= render "posts/tags", p: p %>
+            <% end %>
+          </div>
+          <div class="time">
+            <p class="posts-footer-time"><%= time_ago_in_words p.created_at %> ago</>
+          </div>
+          <div class="comment-display"><%= button_to "DELETE", post_path(p), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="right-side profile" style="width:19%;right:0;left:2rem;">
+    <div class="stories" style="background-color:#2493a9">
+      <div class="top">
+        <div class="image">
+          <center><%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %></center>
+        </div>
+        <div class="profile-details" style=" margin-top: 1rem; color:white;">
+          <center class="profile-name"> <%= current_user.username %></center>
+          <center class="profile-email" style="padding-bottom:2rem;"> <%= current_user.email %></center>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-profile" style="padding:10px;border: 1px solid rgba(219, 219, 219, 1);display:flex;align-items: center;">
+      <span class="material-symbols-outlined">person</span>
+      <div><span>Profile<%= link_to "....", posts_path %></span></div>
+    </div>
+    <div class="bottom-edit" style="padding:10px;border: 1px solid rgba(219, 219, 219, 1);display:flex;align-items: center;">
+      <span class="material-symbols-outlined" >edit</span>
+      <div><span>Edit<%= link_to "....", edit_user_registration_path %></span></div>
+    </div>
+  </div>
+</section>

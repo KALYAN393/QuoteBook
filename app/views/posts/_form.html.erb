@@ -2,17 +2,24 @@
   <div class="newpost-first">
   </div>
   <div class="newpost-middle">
+    <p class="newpost-middle-content-p">Post A New Quote</p>
     <div class="newpost-middle-content">
-      <p class="newpost-middle-content-p">Post A New Quote</p>
       <%= form_for @post do |f| %>
         <div class="newpost-form">
           <div class="newpost-form-content">
             <div class="newpost-form-content-label"><%= f.label :text %></div>
-            <div class="newpost-form-content-value"><%= f.text_area :text %></div>
+            <div class="newpost-form-content-value"><%= f.text_area :text,  size: "60x12" %></div>
           </div>
           <div class="newpost-form-content">
             <div class="newpost-form-content-label"><%= f.label :post_type %></div>
             <div class="newpost-form-content-value"><%= f.select :post_type, ['universal', 'confidential'], selected: 'universal' %></div>
+          </div>
+          <div class="newpost-form-content">
+            <div class="newpost-form-content-label"><%= f.label :tag %></div>
+            <div class="newpost-form-content-value">
+              <%= f.collection_select(:tag_ids, Tag.all, :id, :name,
+            { prompt: "Select suitable tags!!    "}, { multiple: true, size: 4 }) %>
+            </div>
           </div>
         </div>
         <div class="field">

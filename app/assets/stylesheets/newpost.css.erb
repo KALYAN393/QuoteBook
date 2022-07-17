@@ -8,9 +8,10 @@ width: 15%;
 }
 .newpost-middle {
 width: 60%;
-background-image: url(<%=asset_path"bgnp.png"%>);
-padding-bottom: 20rem;
-background-color: brown;
+background-image: url(<%=asset_path"bgnp2.png"%>);
+border: 11px solid rgba(219, 219, 219, 1);
+border-radius: 19px;
+<%# padding-bottom: 20rem; %>
 }
 .newpost-middle-content {
 padding: 3rem;
@@ -20,6 +21,10 @@ font-size: 2rem;
 color: white;
 padding-bottom: 1rem;
 margin-bottom: 2rem;
+border-bottom: 2px solid rgb(192 190 190);
+text-align: center;
+padding-top: 1rem;
+color: cornsilk;
 }
 .newpost-form {
 display: flex;
@@ -33,4 +38,8 @@ padding-bottom:2rem;
 .newpost-form-content-label{
 padding-right:3rem;
 padding-top:0.5rem;
+color: cornsilk;
+}
+form#new_post.new_post{
+padding-left:2rem;
 }

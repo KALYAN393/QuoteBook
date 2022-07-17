@@ -12,15 +12,33 @@
             <p class="posts-content-text-p">&#8220  <%= p.text %>   &#8221</p>
           </div>
         </div>
-        <div >
+        <div class="post-middle">
           <div class="posts-reactions">
             <a href="javascript:" class="material-symbols-outlined like-<%= p.id%> post" data-id=<%= p.id%>>favorite</a>
           </div>
           <div>
           <p> <strong id="post-<%= p.id%>-likes"><%= p.total_likes_count %> likes</strong></p>
         </div>
-        <div>
-          <p class="posts-footer-time"><%= time_ago_in_words p.created_at %> ago</></div>
+        <div class="posts-tags">
+          <% if p.tags.exists?  %>
+            <%= render "posts/tags", p: p %>
+          <% end %>
+        </div>
+        <div class="time">
+          <p class="posts-footer-time"><%= time_ago_in_words p.created_at %> ago</>
+        </div>
+        <div class="comment-display">
+          <p style="color: grey;font-size: small;padding-bottom:5px;">comments:</p>
+          <%= render "posts/comments", p: p %>
+        </div>
+      </div>
+      <div class="post-comment">
+        <%= form_for @comment do |f| %>
+          <%= f.hidden_field :Post_id, value: p.id %>
+          <%= f.hidden_field :User_id, value: current_user.id %>
+          <%= f.text_field :comment,size:"104x12", placeholder: "add a comment" %>
+          <%= f.submit "Post",class: "submit_button"%>
+        <% end %>
       </div>
     </div>
   <% end %>

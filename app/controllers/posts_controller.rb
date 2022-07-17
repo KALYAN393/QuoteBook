@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @userpost = current_user.Posts if user_signed_in?
+    @userpost = current_user.posts if user_signed_in?
     @userposts=@userpost.order(created_at: :desc)
 
   end
@@ -22,9 +22,19 @@ class PostsController < ApplicationController
   end
 end
 
+def destroy
+
+  @post=Post.find(params[:id])
+  @post.destroy
+
+  respond_to do |format|
+    format.html { redirect_to posts_url, status: :see_other, notice: "Post was successfully destroyed." }
+    format.json { head :no_content }
+  end
+end
 
   private
   def post_params
-    params.require(:post).permit(:text,:post_type,:User_id)
+    params.require(:post).permit(:text,:post_type,:User_id, tag_ids: [])
   end
 end

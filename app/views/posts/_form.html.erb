@@ -8,15 +8,14 @@
         <div class="newpost-form">
           <div class="newpost-form-content">
             <div class="newpost-form-content-label"><%= f.label :quote %>:</div>
-            <div class="newpost-form-content-value"><%= f.text_area :text,  size: "60x12" %></div>
+            <div class="newpost-form-content-value"><%= f.cktext_area :text,  size: "60x12" %></div>
           </div>
           <div class="newpost-form-content">
             <div class="newpost-form-content-label"><%= f.label :post_type %>:</div>
-            <div class="newpost-form-content-value"><%= f.select :post_type, ['universal', 'confidential'], selected: 'universal' %></div>
-            <span style="padding-left:13px;color: cornsilk;"><%= f.label :user %>:</span>
+            <div class="newpost-form-content-value"><%= f.select :post_type, ['universal', 'confidential','sharable'], selected: 'universal' %></div>
             <div class="display-users" style="padding-left:10px;">
               <span><%= f.collection_select(:user_ids, User.all, :id, :username,
-            { prompt: "Select users   "}, { multiple: true, size: 3 }) %></span>
+            { prompt: "Select users   "}, { multiple: true, size: 4 }) %></span>
             </div>
           </div>
           <div class="newpost-form-content">
@@ -39,3 +38,13 @@
   <div class="newpost-end">
   </div>
 </section>
+<script>
+  const elem = document.getElementById("post_post_type");
+  elem.addEventListener("change", () => {
+    if (elem.value == 'sharable') {
+      document.getElementById("post_user_ids").style.display = "inherit";
+    } else {
+      document.getElementById("post_user_ids").style.display = "none";
+    }
+  });
+</script>

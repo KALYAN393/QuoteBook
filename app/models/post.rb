@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   has_many :users, through: :post_users
 
   
-  enum :post_type, { confidential: 0, universal: 1 }
+  enum :post_type, { confidential: 0, universal: 1, sharable: 2 }
 
   
 end

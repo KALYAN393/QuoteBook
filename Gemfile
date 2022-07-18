@@ -31,7 +31,11 @@ gem "devise"
 
 gem 'jquery-rails'
 
+gem 'ckeditor'
 
+gem 'carrierwave'
+
+gem 'mini_magick'
 
 
 # Use Redis adapter to run Action Cable in production

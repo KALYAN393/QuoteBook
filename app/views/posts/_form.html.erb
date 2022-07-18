@@ -13,6 +13,11 @@
           <div class="newpost-form-content">
             <div class="newpost-form-content-label"><%= f.label :post_type %>:</div>
             <div class="newpost-form-content-value"><%= f.select :post_type, ['universal', 'confidential'], selected: 'universal' %></div>
+            <span style="padding-left:13px;color: cornsilk;"><%= f.label :user %>:</span>
+            <div class="display-users" style="padding-left:10px;">
+              <span><%= f.collection_select(:user_ids, User.all, :id, :username,
+            { prompt: "Select users   "}, { multiple: true, size: 3 }) %></span>
+            </div>
           </div>
           <div class="newpost-form-content">
             <div class="newpost-form-content-label"><%= f.label :tag %>:</div>

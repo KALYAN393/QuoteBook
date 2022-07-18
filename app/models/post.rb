@@ -10,6 +10,9 @@ class Post < ApplicationRecord
   has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
 
+  has_many :post_users, dependent: :destroy
+  has_many :users, through: :post_users
+
   
   enum :post_type, { confidential: 0, universal: 1 }
 

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @userpost = current_user.posts if user_signed_in?
+    @userpost = Post.where(User_id: current_user.id)
     @userposts=@userpost.order(created_at: :desc)
 
   end
@@ -35,6 +35,6 @@ end
 
   private
   def post_params
-    params.require(:post).permit(:text,:post_type,:User_id, tag_ids: [])
+    params.require(:post).permit(:text,:post_type,:User_id, tag_ids: [], user_ids: [])
   end
 end

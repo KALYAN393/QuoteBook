@@ -5,6 +5,7 @@
   <nav>
     <ul>
       <li><%= link_to "Dashboard", home_index_path, class: "link-secondarysmooth"  %></li>
+      <li><%= link_to "Notifications", home_show_path, class: "link-secondarysmooth"  %></li>
       <li class="NewPost"><%= link_to "New Post", new_post_path, class: "link-secondarysmooth"  %></li>
       <li><%= link_to "Profile", posts_path, class: "link-secondarysmooth" %></li>
       <%= button_to "Logout", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, form_class: "form" %>

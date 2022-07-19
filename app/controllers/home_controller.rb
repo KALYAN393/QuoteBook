@@ -4,4 +4,10 @@ class HomeController < ApplicationController
     @users=User.all
     @comment=Comment.new
   end
+   def show
+    @sharedposts=Post.joins(:post_users).where(:post_users  => {user_id: current_user.id}).order(created_at: :desc)
+    @users=User.all
+    @comment=Comment.new
+   end
+
 end

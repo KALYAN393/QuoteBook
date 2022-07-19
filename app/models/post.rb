@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  validates :text, presence: true, length: { minimum: 10, maximum: 300 }
+  validates :text, presence: true, length: { minimum: 10, maximum: 800 }
 
   belongs_to :User
 

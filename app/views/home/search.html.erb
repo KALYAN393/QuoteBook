@@ -1,8 +1,8 @@
 <div class="quotebook">
-  <%= render "header" %>
+  <%= render "homeheader" %>
   <section>
   <div class="left-side">
-    <%@sharedposts.each do |p|%>
+    <%@PostsbyTag.each do |p|%>
       <div class="posts">
         <div class="posts-title">
           <div class="posts-title-name">
@@ -36,5 +36,6 @@
   <% end %>
 </div>
 </section>
-
 </div>
+
+

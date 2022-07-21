@@ -9,5 +9,15 @@ class HomeController < ApplicationController
     @users=User.all
     @comment=Comment.new
    end
-
+  
+   def search
+    
+    if params[:search].blank?
+      redirect_to home_index_path and return
+    else
+    search_term = params[:search]
+    @tag=Tag.where("name LIKE ?","%#{search_term}%")
+    @PostsbyTag=Post.joins(:tags).where(:tags =>{id: @tag.ids.first},:posts=>{post_type: "universal"}).order(created_at: :desc)
+   end
+end
 end

@@ -27,8 +27,6 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem "devise"
-
 gem 'jquery-rails'
 
 gem 'ckeditor'
@@ -36,10 +34,6 @@ gem 'ckeditor'
 gem 'carrierwave'
 
 gem 'mini_magick'
-
-gem 'whenever', require: false
-
-
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -49,6 +43,12 @@ gem 'whenever', require: false
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
+
+gem "devise"
+
+
+
+gem 'whenever', '~> 1.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]

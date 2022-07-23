@@ -99,14 +99,69 @@ padding: 15px;
 display: flex;
 justify-content: flex-start;
 cpadding-top: 1rem;
-padding-left: 0.5rem;
+padding: 0.5rem;
 }
 .image {
+  width: 90px;
+  height: 90px;
 margin-right: 0.5rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+box-sizing: unset;
+
+}
+.rotate {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  animation: example 1.5s ease-in;
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+box-sizing: unset;
+
 }
 .image-rb {
-border-radius: 50%;
-border: 5px solid rgb(21, 198, 89);
+width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+
+  transform: translate(14%, 14%);
+}
+
+@keyframes example {
+  0% {
+    border: 4px dashed #fff;
+  }
+  15% {
+    border: 4px dashed #fff;
+  }
+
+  45% {
+    transform: rotate(300deg);
+    border: 4px dashed #fff;
+  }
+
+  60% {
+    border: 4px dashed #fff;
+  }
+  75% {
+    border: 4px dashed #fff;
+  }
+
+  100% {
+    border: 4px dashed #fff;
+  }
+}
+.details{
+  margin-top:1.5rem;
 }
 .comment-display {
 margin-top: 13px;

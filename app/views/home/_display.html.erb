@@ -16,7 +16,7 @@
         </div>
         <div class="post-middle">
           <div class="posts-reactions">
-            <a href="javascript:" class="material-symbols-outlined like-<%= p.id%> post" data-id=<%= p.id%>>favorite</a>
+            <a href="javascript:" class="material-symbols-outlined like-<%= p.id%> <%= 'active' if post_liked_by_user?(p.id) %> post" data-id=<%= p.id%>>favorite</a>
           </div>
           <div>
           <p> <strong id="post-<%= p.id%>-likes"><%= p.total_likes_count %> likes</strong></p>
@@ -43,39 +43,35 @@
         <% end %>
       </div>
     </div>
-  <% end %>
+
+<% end %>
+
 </div>
 <div class="right-side">
   <div class="stories">
     <p>Flyoutes</p>
+    <%@stories.each do |p|%>
     <div class="stories-contents">
-      <div class="image">
-        <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
+      <div id="<%= p.id %>" class="image" onclick="myFunction(<%= p.id %>)">
+      <%= link_to post_path(p.id) do %>
+        <%= image_tag "flyout.jpeg", class:"image-rb" %>
+      <% end %>
       </div>
       <div class="details">
-        <p class="name">Kalyan</p>
-        <p>12 hours ago</p>
+        <p class="name"><%= p.User.username %></p>
+        <p><%= time_ago_in_words p.created_at %></p>
       </div>
     </div>
-    <div class="stories-contents">
-      <div class="image">
-        <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
-      </div>
-      <div class="details">
-        <p class="name">HHH</p>
-        <p>12 hours ago</p>
-      </div>
-    </div>
-    <div class="stories-contents">
-      <div class="image">
-        <%= image_tag "flyout.jpeg", height: 60, class:"image-rb" %>
-      </div>
-      <div class="details">
-        <p class="name">Undertaker</p>
-        <p>12 hours ago</p>
-      </div>
-    </div>
+    <% end %>
+    
   </div>
+   <script>
+      function myFunction(a) {
+        var s = a;
+        var element = document.getElementById(s);
+        element.classList.toggle("rotate");
+      }
+    </script>
 </div>
 </div>
 </section>

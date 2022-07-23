@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_18_095850) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_23_174551) do
   create_table "ckeditor_assets", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
@@ -65,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_18_095850) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "total_likes_count"
+    t.boolean "isStory"
     t.index ["User_id"], name: "index_posts_on_User_id"
   end
 

@@ -18,7 +18,7 @@
         </div>
         <div class="post-middle">
           <div class="posts-reactions">
-            <a href="javascript:" class="material-symbols-outlined like-<%= p.id%> post" data-id=<%= p.id%>>favorite</a>
+            <a href="javascript:" class="material-symbols-outlined like-<%= p.id%> <%= 'active' if post_liked_by_user?(p.id) %>  post" data-id=<%= p.id%>>favorite</a>
           </div>
           <div>
           <p> <strong id="post-<%= p.id%>-likes"><%= p.total_likes_count %> likes</strong></p>

@@ -10,6 +10,17 @@
             <div class="newpost-form-content-label"><%= f.label :quote %>:</div>
             <div class="newpost-form-content-value"><%= f.cktext_area :text,  size: "60x12" %></div>
           </div>
+
+          <div class="newpost-form-content">
+          
+          <div><p class="newpost-form-content-label">IsStory ? </p></div>
+            <div style="margin-right:10px;" ><%= f.radio_button(:isStory, "TRUE") %>
+                  <%= f.label :Yes %>
+            </div>
+            <div><%= f.radio_button(:isStory, "FALSE", {checked: true}) %>
+                 <%= f.label(:No) %>
+            </div>
+            </div>
           <div class="newpost-form-content">
             <div class="newpost-form-content-label"><%= f.label :post_type %>:</div>
             <div class="newpost-form-content-value"><%= f.select :post_type, ['universal', 'confidential','sharable'], selected: 'universal' %></div>

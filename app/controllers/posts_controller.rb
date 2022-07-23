@@ -22,6 +22,12 @@ class PostsController < ApplicationController
   end
 end
 
+
+def show
+  @post=Post.find(params[:id])
+
+end
+
 def destroy
 
   @post=Post.find(params[:id])
@@ -35,6 +41,6 @@ end
 
   private
   def post_params
-    params.require(:post).permit(:text,:post_type,:User_id, tag_ids: [], user_ids: [])
+    params.require(:post).permit(:text,:post_type,:User_id,:isStory, tag_ids: [], user_ids: [])
   end
 end

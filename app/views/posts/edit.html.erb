@@ -1,0 +1,23 @@
+<%= render "home/header" %>
+<section class="new-post">
+  <div class="newpost-first">
+  </div>
+  <div class="newpost-middle">
+    <p class="newpost-middle-content-p">Update Your Quote</p>
+    <div class="newpost-middle-content">
+      <%= form_for @post do |f| %>
+        <div class="newpost-form">
+          <div class="newpost-form-content">
+            <div class="newpost-form-content-label"><%= f.label :quote %>:</div>
+            <div class="newpost-form-content-value"><%= f.cktext_area :text,  size: "60x12" %></div>
+          </div>
+        <div>
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="newpost-end">
+  </div>
+</section>
+

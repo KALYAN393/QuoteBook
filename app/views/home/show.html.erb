@@ -1,40 +1,4 @@
 <div class="quotebook">
   <%= render "header" %>
-  <section>
-  <div class="left-side">
-    <%@sharedposts.each do |p|%>
-      <div class="posts">
-        <div class="posts-title">
-          <div class="posts-title-name">
-            <p><%= p.User[:username] %></p>
-          </div>
-        </div>
-        <div class="posts-content">
-          <div class="posts-content-text">
-            <p class="posts-content-text-p">
-              <p class="posts-content-text-p-con">  <%= raw p.text %> </p>
-            </p>
-          </div>
-        </div>
-        <div class="post-middle">
-          <div class="posts-reactions">
-            <a href="javascript:" class="material-symbols-outlined like-<%= p.id%> <%= 'active' if post_liked_by_user?(p.id) %>  post" data-id=<%= p.id%>>favorite</a>
-          </div>
-          <div>
-          <p> <strong id="post-<%= p.id%>-likes"><%= p.total_likes_count %> likes</strong></p>
-        </div>
-        <div class="posts-tags">
-          <% if p.tags.exists?  %>
-            <%= render "posts/tags", p: p %>
-          <% end %>
-        </div>
-        <div class="time">
-          <p class="posts-footer-time"><%= time_ago_in_words p.created_at %> ago</>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-</section>
-
+  <%= render "filter", obj:@sharedposts %>
 </div>

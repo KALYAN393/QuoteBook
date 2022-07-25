@@ -17,10 +17,10 @@
 #   runner "AnotherModel.prune_old_records"
 # end
 
-set :output, "log/cron.log"
+# set :output, "log/cron.log"
 
-every 1.minutes do
-  runner "puts '=====Test======'"
-end
+# every 1.minutes do
+#   runner "puts '=====Test======'"
+# end
 
 # Learn more: http://github.com/javan/whenever

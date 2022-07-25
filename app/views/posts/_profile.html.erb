@@ -17,7 +17,7 @@
             <a  class="material-symbols-outlined profile-like">favorite</a>
           </div>
           <div>
-            <p> <strong><%= p.total_likes_count %> likes</strong></p>
+            <p><strong><%= p.total_likes_count %> likes</strong></p>
           </div>
           <div class="posts-tags">
             <% if p.tags.exists?  %>
@@ -27,12 +27,15 @@
           <div class="time">
             <p class="posts-footer-time"><%= time_ago_in_words p.created_at %> ago</>
           </div>
-          <div class="comment-display"><%= button_to "DELETE", post_path(p), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>
-          </div>
+          <div style="display:flex;">
+          <div class="comment-display" style="padding-right:5px;"><%= button_to "DELETE", post_path(p), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>   </div>
+          <div class="comment-display"><%= button_to "EDIT", edit_post_path(p), method: :get %>   </div>
+        </div>
         </div>
       </div>
     <% end %>
   </div>
+
   <div class="right-side profile" style="width:19%;right:0;left:2rem;">
     <div class="stories" style="background-color:#2493a9">
       <div class="top">
@@ -51,7 +54,7 @@
     </div>
     <div class="bottom-edit" style="padding:10px;border: 1px solid rgba(219, 219, 219, 1);display:flex;align-items: center;">
       <span class="material-symbols-outlined" >edit</span>
-      <div><span>Edit<%= link_to "....", edit_user_registration_path %></span></div>
+      <div><span><%= button_to "EDIT", edit_user_registration_path, method: :get %> </span></div>
     </div>
   </div>
 </section>

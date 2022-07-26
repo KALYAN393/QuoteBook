@@ -1,4 +1,10 @@
-<h2>Log in</h2>
+<div class="Registration" style="display:flex;padding-top:10%;padding-left:20%;padding-right:15%;background: rgb(46,125,171);
+background: linear-gradient(132deg, rgba(46,125,171,0.8954175420168067) 0%, rgba(57,190,34,1) 100%);">
+<div class="middle" style="display:flex;width:90%;height:600px">
+<div class="img-registration" style="border-radius: 15px;"><%= image_tag "homelogo.png",style: 'border-radius: 18px;height:600px;width:700px'%> 
+</div>
+<div class="Login" style="width:100%;padding-left:15px;padding-top:10%;border-radius: 18px;background-color:white;">
+<h2 style="padding-bottom:14px;">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -22,5 +28,7 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>

@@ -16,5 +16,13 @@ class Post < ApplicationRecord
   
   enum :post_type, { confidential: 0, universal: 1, sharable: 2 }
 
-  
+  default_scope -> { order(created_at: :desc)}
+
+  scope :published_posts, ->(user=current_user.id) { where("(post_type = ? OR User_id = ?) AND isStory = ?", 1, user,false) }
+   
+  scope :published_stories, -> {where("isStory = ?",true)}
+
+  scope :sharedposts, ->(user=current_user.id) { joins(:post_users).where(:post_users  => {user_id: user},:posts=>{isStory: false})}
+   
+  scope :filtertags, ->(tagid= a) {joins(:tags).where(:tags =>{id: tagid},:posts=>{post_type: "universal",isStory: false})}
 end

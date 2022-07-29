@@ -25,4 +25,11 @@ class Post < ApplicationRecord
   scope :sharedposts, ->(user=current_user.id) { joins(:post_users).where(:post_users  => {user_id: user},:posts=>{isStory: false})}
    
   scope :filtertags, ->(tagid= a) {joins(:tags).where(:tags =>{id: tagid},:posts=>{post_type: "universal",isStory: false})}
+
+
+  # handle_asynchronously :delete_story, :run_at => Proc.new { 1.minutes.from_now }
+  # def delete_story
+  #   # do some delayed stuff her
+  #   puts "hi inside delete_story"
+  # end
 end

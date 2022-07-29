@@ -20,7 +20,7 @@
 # set :output, "log/cron.log"
 
 # every 1.minutes do
-#   runner "puts '=====Test======'"
+#    runner "puts '=====Test======'"
 # end
 
 # Learn more: http://github.com/javan/whenever

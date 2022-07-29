@@ -15,7 +15,6 @@ class HomeController < ApplicationController
     else
     search_term = params[:search]
     @tag=Tag.where("name LIKE ?","%#{search_term}%")
-    # @PostsbyTag=Post.joins(:tags).where(:tags =>{id: @tag.ids.first},:posts=>{post_type: "universal",isStory: false})
     @PostsbyTag=Post.filtertags(@tag.ids.first)
    end
 end

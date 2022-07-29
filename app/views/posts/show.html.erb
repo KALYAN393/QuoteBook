@@ -8,6 +8,9 @@ background: linear-gradient(90deg, rgba(46,140,171,0.8954175420168067) 12%, rgba
     height: 100vh;
     background-color: #000000;
     color: white;">
+    <div id="myProgress">
+          <div id="myBar"></div>
+    </div>
       <div class="status-center-name" style="
         padding:8px;padding-bottom:30%;display:flex;    justify-content: space-between;" >
         <div>
@@ -17,7 +20,7 @@ background: linear-gradient(90deg, rgba(46,140,171,0.8954175420168067) 12%, rgba
          <div><p onclick="history.back()" style="font-size:2rem;  cursor: pointer;">&#8592</p>
          </div>       
       </div>
-
+     
       <div class="status-quote" style="margin-bottom:20%;padding:20%;background: rgb(46,140,171);
 background: linear-gradient(90deg, rgba(46,140,171,0.8954175420168067) 12%, rgba(34,190,140,1) 100%);">
       <center><%= raw @post.text %></center> 
@@ -25,4 +28,31 @@ background: linear-gradient(90deg, rgba(46,140,171,0.8954175420168067) 12%, rgba
   </div>
 </div>
 </div>
+<button id="mm"onclick="move()" Hidden="hidden"></button> 
+
+<script>setTimeout(function() {
+  history.back();
+}, 5000);
+var i = 0;
+var e = document.getElementById("mm");
+e.click();
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 50);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+
+</script>
 

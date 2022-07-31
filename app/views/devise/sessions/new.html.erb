@@ -7,7 +7,7 @@ background: linear-gradient(132deg, rgba(46,125,171,0.8954175420168067) 0%, rgba
 background: linear-gradient(132deg, rgba(57,190,34,1) 0%, rgba(46,155,171,1) 57%);">
 <h2 style="padding-bottom:14px;">Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name),html: { style: 'padding-top:10px;'}) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -26,7 +26,7 @@ background: linear-gradient(132deg, rgba(57,190,34,1) 0%, rgba(46,155,171,1) 57%
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in" ,style: "padding:2px 8px;"%>
   </div>
 <% end %>
 <%= render "devise/shared/links" %>

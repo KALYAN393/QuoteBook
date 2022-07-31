@@ -54,4 +54,4 @@ Challenges:
 
 ### Schema Design:
 
-## https://github.com/KALYAN393/QuoteBook/blob/main/app/assets/images/schema.png
+<img src="/images/schema.png" alt="schema"/>

@@ -1,0 +1,45 @@
+Quotes Book
+
+Problem Statement
+
+Implement web application where Admin can upload any number of Quotes.
+
+	Requirements:
+
+User:
+
+•	As an User I should land on admin login dashboard page.
+•	As an User I should be able to login to admin dashboard using the credentials (Email & Password).
+•	After login user can see the list of quotes which are added recently from other users.
+•	User can Add different kinds of quotes in different styles & customized format.
+•	User can Create, Read, update, delete the quote.
+•	Users can like, dislike, Comment, Share the quotes to other users.
+•	User should maintain his own profile with list of quotes he added with Date & Time.
+•	User can add tags to the quotes.
+
+Add Challenges:
+
+•	User can maintain Privacy by giving Public option for the quotes to be shared for others & Self Option for the quotes to be maintained in profile timeline.
+•	User can share his Quote to his own story for a timeline of 24 hours, (quote should disappear after 24 hours).
+•	User can filter Quotes by their tag,
+•	User can sign in to his profile via Gmail or Facebook.
+
+Note:  No need to implement registration part u can create users using seed data.
+: 
+
+	Constraints
+•	You can write the frontend in any JavaScript framework of your choice
+•	To save time on UI, use any popular CSS frameworks like Bootstrap/ Materialize
+•	Try to keep the use of external libraries/packages to a minimum
+•	Your solution must have unit-tests. Extra points if you can follow TDD while building your solution.
+
+	Code submission guidelines
+1.	You have 3weeks to implement the solution
+2.	We are interested in how you design & structure your code, object-oriented or functional design and database schema design
+3.	We're also interested in understanding how you make assumptions when building software
+4.	Please use Git for version control and add frequent commits. This will help us understand how you built the solution
+5.	Please provide a README file with your solution with instructions to setup/run the solution.
+
+
+
+

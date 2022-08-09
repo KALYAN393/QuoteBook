@@ -1,6 +1,6 @@
 <section>
   <div class="left-side">
-    <%@posts.each do |p|%>
+    <%@home.posts.each do |p|%>
       <div class="posts">
         <div class="posts-title">
           <div class="posts-title-name">
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="post-comment">
-        <%= form_for @comment do |f| %>
+        <%= form_for @home.comment do |f| %>
           <%= f.hidden_field :Post_id, value: p.id %>
           <%= f.hidden_field :User_id, value: current_user.id %>
           <%= f.text_field :comment,size:"103x12", placeholder: "add a comment", style: "padding: 4px;"%>
@@ -49,7 +49,7 @@
 <div class="right-side">
   <div class="stories">
     <p>Flyoutes</p>
-    <%@stories.each do |p|%>
+    <%@home.stories.each do |p|%>
     <div class="stories-contents">
       <div id="<%= p.id %>" class="image" onclick="myFunction(<%= p.id %>)">
       <%= link_to post_path(p.id) do %>

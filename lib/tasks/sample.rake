@@ -3,5 +3,4 @@ namespace :sample do
   task test: :environment do
     puts 'hi cron :)'
   end
-
 end

@@ -1,4 +1,4 @@
-class HomePosts
+class HomePost
 
     def initialize(current_user)
         @current_user = current_user

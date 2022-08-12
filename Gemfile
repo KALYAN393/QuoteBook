@@ -35,6 +35,10 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+
+
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -54,6 +58,7 @@ gem "omniauth-rails_csrf_protection"
 
 gem 'byebug', '~> 9.0', '>= 9.0.6'
 
+gem 'rubocop-rails', require: false
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]

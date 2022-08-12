@@ -22,7 +22,7 @@
           <p> <strong id="post-<%= p.id%>-likes"><%= p.total_likes_count %> likes</strong></p>
         </div>
         <div class="posts-tags">
-          <% if p.tags.exists?  %>
+          <% @home.on_tag_exists(p.tags)  do %>
             <%= render "posts/tags", p: p %>
           <% end %>
         </div>
@@ -62,7 +62,7 @@
       </div>
     </div>
     <% end %>
-    
+
   </div>
    <script>
       function myFunction(a) {
@@ -71,6 +71,5 @@
         element.classList.toggle("rotate");
       }
     </script>
-</div>
 </div>
 </section>

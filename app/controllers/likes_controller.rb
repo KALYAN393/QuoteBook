@@ -1,28 +1,28 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
-
   def save_like
-    @post_id=params[:post_id]
-    @like=Like.new(Post_id: params[:post_id], User_id: current_user.id)
-    @post_likes=Post.select(:total_likes_count).where(id: @post_id)
-    exiting_combination=Like.where(Post_id: params[:post_id], User_id: current_user.id)
+    @post_id = params[:post_id]
+    @like = Like.new(Post_id: params[:post_id], User_id: current_user.id)
+    @post_likes = Post.select(:total_likes_count).where(id: @post_id)
+    exiting_combination = Like.where(Post_id: params[:post_id], User_id: current_user.id)
     respond_to do |format|
-      format.js {
-
+      format.js do
         if exiting_combination.any?
           exiting_combination.first.destroy
-          @success= false
+          @success = false
         elsif @like.save
-           @success= true
+          @success = true
         else
-          @success= false 
+          @success = false
         end
-     
-        @post_likes=Post.find(@post_id).total_likes_count
-         render "/posts/like"
-        
-      }
+
+        @post_likes = Post.find(@post_id).total_likes_count
+        render '/posts/like'
+      end
     end
   end
+
   # def index
   #   # debugger
   #   @like=Like.new(Post_id: params[:post_id], User_id: current_user.id)
@@ -37,11 +37,11 @@ class LikesController < ApplicationController
   #       elsif @like.save
   #          @success= true
   #       else
-  #         @success= false 
+  #         @success= false
   #       end
-     
+
   #        render "/post/like"
-        
+
   #     }
   #   end
   # end
@@ -58,7 +58,6 @@ class LikesController < ApplicationController
   #   end
   # end
 
-
   # def destroy
   #   @like=current_user.likes.find(params[:id])
   #   post=@like.Post
@@ -72,6 +71,4 @@ class LikesController < ApplicationController
   # def permitter_params
   #   params.permit (:post_id)
   # end
-
-  
 end
